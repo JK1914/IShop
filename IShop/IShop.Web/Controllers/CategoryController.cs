@@ -48,5 +48,30 @@ namespace IShop.Web.Controllers
             _repository.Add(category);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var category = _repository.GetById(id);
+            var model = new CategoryViewModel { Name = category.Name };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(CategoryViewModel model)
+        {
+            if (!ModelState.IsValid) 
+                return View(model);
+            var category = new Category
+            {
+                Id = model.Id,
+                Name = model.Name
+            };
+
+            _repository.Update(category);
+            return RedirectToAction("Index");
+        }
+
     }
 }
