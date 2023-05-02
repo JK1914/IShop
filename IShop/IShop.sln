@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IShop.Domain", "IShop.Domain\IShop.Domain.csproj", "{FD232629-8167-4A4E-8C4D-5DA986906125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IShop.Domain", "IShop.Domain\IShop.Domain.csproj", "{FD232629-8167-4A4E-8C4D-5DA986906125}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1FECBBBC-E18D-4B10-8E44-43CB3F97E8CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IShop.Application", "IShop.Application\IShop.Application.csproj", "{923313AA-2728-47CC-B3AD-906BDC7D4A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IShop.Application", "IShop.Application\IShop.Application.csproj", "{923313AA-2728-47CC-B3AD-906BDC7D4A3B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8C61666F-71B2-4EE7-B8DB-FB2F62364628}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IShop.Presistance", "IShop.Presistance\IShop.Presistance.csproj", "{766A7D35-15B9-45E0-8498-802F4312C60B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IShop.Presistance", "IShop.Presistance\IShop.Presistance.csproj", "{766A7D35-15B9-45E0-8498-802F4312C60B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C9276C00-1E69-43BF-A581-A80D50DC83A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IShop.Web", "IShop.Web\IShop.Web.csproj", "{3EFA4DF6-A7CF-46F0-B540-8F163068433F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IShop.Web", "IShop.Web\IShop.Web.csproj", "{3EFA4DF6-A7CF-46F0-B540-8F163068433F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
