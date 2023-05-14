@@ -12,7 +12,7 @@ namespace IShop.Domain.Entities
         [Key]
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
-        [Range(0, int.MaxValue)]
-        public int DisplayOrder { get; set; }
+        //[Range(0, int.MaxValue)]
+        //public int DisplayOrder { get; set; }
     }
 }
