@@ -38,15 +38,44 @@ namespace IShop.Web.Controllers
             if (!ModelState.IsValid)
             {
                 return View();
-            }
-
-            Random rnd = new Random();
+            }            
 
             var applicationType = new ApplicationType
             {
                 Name = model.Name                
             };
             _repository.Add(applicationType);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var appType = _repository.GetById(id);
+            var model = new ApplicationTypeViewModel { Name = appType.Name };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ApplicationTypeViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+            var appType = new ApplicationType
+            {
+                Id = model.Id,
+                Name = model.Name
+            };
+
+            _repository.Update(appType);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var appType = _repository.GetById(id);
+            _repository.Remove(appType);
             return RedirectToAction("Index");
         }
     }

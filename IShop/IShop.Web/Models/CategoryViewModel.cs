@@ -8,5 +8,6 @@ namespace IShop.Web.Models
         [Required(ErrorMessage ="Поле должно быть заполнено!")]
         [Display(Name ="Название")]
         public string Name { get; set; } = string.Empty;
+        public int DisplayOrder { get; set; }
     }
 }

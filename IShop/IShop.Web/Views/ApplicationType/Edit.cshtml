@@ -1,4 +1,4 @@
-﻿@model CategoryViewModel
+﻿@model ApplicationTypeViewModel
 @{
     ViewData["Title"] = "Edit";
 }
@@ -15,11 +15,7 @@
             <div class="col-8">
                 <input asp-for="Name" class="form-control" value="@Model.Name"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="col-8">
-                <input asp-for="DisplayOrder" class="form-control" value="@Model.DisplayOrder"/>
-                <span asp-validation-for="DisplayOrder" class="text-danger"></span>
-            </div>
+            </div>            
         </div>
         <div class="form-group row">
             <div class="col">
