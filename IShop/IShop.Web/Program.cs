@@ -1,6 +1,7 @@
 using IShop.Application.Interfaces;
 using IShop.Presistance;
 using IShop.Presistance.Repository;
+using IShop.Web.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddPresistance(builder.Configuration);
+builder.Services.AddScoped<ImageService>();
+builder.Services.AddScoped<ProductService>();
 
 var app = builder.Build();
 

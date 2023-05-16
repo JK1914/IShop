@@ -9,5 +9,7 @@ namespace IShop.Application.Interfaces
 {
     public interface IProductRepository : IGenericRepository<Product>
     {
+        public IEnumerable<Product> GetProducts();
+
     }
 }
