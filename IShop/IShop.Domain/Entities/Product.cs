@@ -13,7 +13,9 @@ namespace IShop.Domain.Entities
         public string Image { get; set; } = string.Empty;
         public int CategoryId { get; set; } // внешний ключ
         [ForeignKey("CategoryId")]
-        public virtual Category? Category { get; set; } // навигационное свойство       
-
+        public virtual Category? Category { get; set; } // навигационное свойство
+        public int ApplicationTypeId { get; set; }
+        [ForeignKey("ApplicationTypeId")]
+        public virtual ApplicationType? ApplicationType { get; set; }  
     }
 }

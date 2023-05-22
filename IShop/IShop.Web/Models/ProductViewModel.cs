@@ -15,6 +15,9 @@ namespace IShop.Web.Models
         public string Image { get; set; } = string.Empty;
         public List<SelectListItem>? CategoryDropDown { get; set; }
         public int CategoryId { get; set; }
-        public Category? Category { get; set; }
+        public Category? Category { get; set; }  
+        public List<SelectListItem>? ApplicationTypeDropDown { get; set; }
+        public int ApplicationTypeId { get; set; }
+        public ApplicationType? ApplicationType { get; set; }
     }
 }

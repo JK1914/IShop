@@ -20,7 +20,7 @@ namespace IShop.Presistance.Repository
         public IEnumerable<Product> GetProducts()
         {
             var products = _appDbContext.Products
-                .Include(p => p.Category);
+                .Include(p => p.Category).Include(a=>a.ApplicationType);
             return products;
         }
     }

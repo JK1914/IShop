@@ -28,7 +28,8 @@ namespace IShop.Web.Controllers
                 Id = p.Id,
                 Name = p.Name,
                 Price = p.Price,
-                Category = p.Category
+                Category = p.Category,
+                ApplicationType = p.ApplicationType,
             })
                 .ToList();
             return View(products);
@@ -39,7 +40,8 @@ namespace IShop.Web.Controllers
         {
             var products = new ProductViewModel
             {
-                CategoryDropDown = _productService.GetCategoryList()
+                CategoryDropDown = _productService.GetCategoryList(),
+                ApplicationTypeDropDown = _productService.GetApplicationTypeList(),
             };
             return View(products);
         }
@@ -50,6 +52,7 @@ namespace IShop.Web.Controllers
             if (!ModelState.IsValid)
             {
                 product.CategoryDropDown = _productService.GetCategoryList();
+                product.ApplicationTypeDropDown = _productService.GetApplicationTypeList();
                 return View(product);
             }
 
@@ -62,7 +65,8 @@ namespace IShop.Web.Controllers
                 Price = product.Price,
                 Description = product.Description,
                 Image = product.Image,
-                CategoryId = product.CategoryId
+                CategoryId = product.CategoryId,
+                ApplicationTypeId = product.ApplicationTypeId,
             };
 
             _productRepository.Add(entity);
@@ -82,6 +86,8 @@ namespace IShop.Web.Controllers
                 Description = entity.Description,
                 CategoryId = entity.CategoryId,
                 CategoryDropDown = _productService.GetCategoryList(),
+                ApplicationTypeId = entity.ApplicationTypeId,
+                ApplicationTypeDropDown = _productService.GetApplicationTypeList(),
             };
 
             return View(product);
