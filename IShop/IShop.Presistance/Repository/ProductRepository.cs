@@ -15,7 +15,15 @@ namespace IShop.Presistance.Repository
         public ProductRepository(AppDbContext context) : base(context)
         {
             _appDbContext = context;
-        }        
+        }
+
+        public Product GetProductById(int id)
+        {
+            var product = _appDbContext.Products
+                .AsNoTracking()
+                .FirstOrDefault(p => p.Id == id);
+            return product;
+        }
 
         public IEnumerable<Product> GetProducts()
         {

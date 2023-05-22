@@ -30,5 +30,14 @@
             files[0].CopyTo(fileStream);
             return nameImage;
         }
+
+        public void DeleteImage(string imageName)
+        {
+            string fullPath = _environment.WebRootPath + _configuration["ImagePath"]+imageName;
+            if (File.Exists(fullPath))
+            {
+                File.Delete(fullPath);
+            }
+        }
     }
 }

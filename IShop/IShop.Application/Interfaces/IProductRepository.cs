@@ -11,5 +11,6 @@ namespace IShop.Application.Interfaces
     {
         public IEnumerable<Product> GetProducts();
 
+        public Product GetProductById(int id);
     }
 }

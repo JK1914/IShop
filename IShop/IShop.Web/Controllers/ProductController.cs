@@ -96,6 +96,38 @@ namespace IShop.Web.Controllers
         [HttpPost]
         public IActionResult Edit(ProductViewModel product)
         {
+            if (!ModelState.IsValid)
+            {
+                return View(product);
+            }
+            var currentProduct = _productRepository.GetProductById(product.Id);
+            _imageService.DeleteImage(currentProduct.Image);
+
+            var files = HttpContext.Request.Form.Files;
+
+
+            var entity = new Product
+            {
+                Id = product.Id,
+                Name = product.Name,
+                Description = product.Description,
+                Price = product.Price,
+                Image = _imageService.ImageLoad(files),
+                CategoryId = product.CategoryId,
+                ApplicationTypeId = product.ApplicationTypeId,
+            };
+
+            _productRepository.Update(entity);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var currentProduct = _productRepository.GetProductById(id);
+            _imageService.DeleteImage(currentProduct.Image);
+
+            _productRepository.Remove(currentProduct);
             return RedirectToAction("Index");
         }
     }

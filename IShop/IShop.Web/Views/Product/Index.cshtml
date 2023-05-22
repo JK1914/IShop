@@ -73,8 +73,8 @@
             let id = Number($(el).attr('id'))
                         
             return $.ajax({
-                url:'@Url.Action("Delete","ApplicationType")',
-                datatype: 'post',
+                url:'@Url.Action("Delete","Product")',
+                datatype: 'get',
                 data: {id:id},
                 success: function(){
                     return true;
