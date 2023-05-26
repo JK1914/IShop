@@ -21,6 +21,8 @@ namespace IShop.Presistance.Repository
         {
             var product = _appDbContext.Products
                 .AsNoTracking()
+                .Include(x=>x.Category)
+                .Include(x=>x.ApplicationType)
                 .FirstOrDefault(p => p.Id == id);
             return product;
         }
